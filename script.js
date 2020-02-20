@@ -58,6 +58,9 @@ etiqueta.innerHTML = "LUCES";
 	else if(msg=='apagado'){
 		document.getElementById('temp').innerHTML=msg;
 	}
+	  else{
+	  document.getElementById('luz').innerHTML=msg;
+	  }
   }
   
     // called when a message arrives
@@ -70,7 +73,7 @@ etiqueta.innerHTML = "LUCES";
 
     // called when a message arrives
 	function led() {
-
+sendMessage('estado');
   }
   
   function action(msg) {
