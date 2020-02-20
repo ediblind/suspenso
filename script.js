@@ -58,9 +58,7 @@ etiqueta.innerHTML = "LUCES";
 	else if(msg=='apagado'){
 		document.getElementById('temp').innerHTML=msg;
 	}
-	  else{
 	  document.getElementById('luz').innerHTML=msg;
-	  }
   }
   
     // called when a message arrives
