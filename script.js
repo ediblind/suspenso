@@ -77,8 +77,8 @@ String dato[]:
 
     // called when a message arrives
 	function led() {
-	for(i=0; i<=y; i++)
-		document.getElementById('luz').innerHTML=dato[i];
+	for(i=0; i<=y; i++){
+		document.getElementById('luz').innerHTML=dato[i];}
   }
   
   function action(msg) {
