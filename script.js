@@ -54,7 +54,7 @@ etiqueta.innerHTML = "LUCES";
 	msg=message.payloadString;
 	  if(msg=='encendido')
 		document.getElementById('temp').innerHTML=msg;
-	elif(msg=='apagado')
+	else if(msg=='apagado')
 		document.getElementById('temp').innerHTML=msg;
   }
   
