@@ -52,17 +52,10 @@ etiqueta.innerHTML = "LUCES";
     console.log("Te enviaron:"+message.payloadString);
 	action(message.payloadString);
 	msg=message.payloadString;
-	mensaje=msg.split(':');
-		document.getElementById('temp').innerHTML=mensaje[1]+"°C";
-		document.getElementById('vel').innerHTML=mensaje[2]+"Km/h";
-		if(mensaje[3]>512)
-		document.getElementById('dir').innerHTML=mensaje[3]+"NE";
-		else if(mensaje[3]==512)
-		document.getElementById('dir').innerHTML=mensaje[3]+"N";
-		else{
-		document.getElementById('dir').innerHTML=mensaje[3]+"NO";
-		}
-		document.getElementById('luz').innerHTML=mensaje[4]+"%";
+	  if(msg=='encendido')
+		document.getElementById('temp').innerHTML=msg;
+	elif(msg=='apagado')
+		document.getElementById('temp').innerHTML=msg;
   }
   
     // called when a message arrives
@@ -87,18 +80,6 @@ y=0;
 			}  
 	
 	console.log("Te enviaron:"+message.payloadString);	
-  }
-    
-   function cent() {
-	   sendMessage('centrar');
-		}
-  
-  function izq() {
-			sendMessage('izquierda');
-  }
-  
-  function der() {
-			sendMessage('derecha');
   }
   
   function action(msg) {
