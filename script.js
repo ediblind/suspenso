@@ -46,16 +46,25 @@ etiqueta.innerHTML = "LUCES";
       console.log("onConnectionLost:"+responseObject.errorMessage);
     }
   }
-
+i=0;
+y=0;
+String dato[]:
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("Te enviaron:"+message.payloadString);
 	action(message.payloadString);
 	msg=message.payloadString;
-	  if(msg=='encendido')
+	  if(msg=='encendido'){
 		document.getElementById('temp').innerHTML=msg;
-	else if(msg=='apagado')
+	        dato[i]=msg;
+	  i=i+1;
+	  y=i;}
+	else if(msg=='apagado'){
 		document.getElementById('temp').innerHTML=msg;
+		dato[i]=msg;
+	  i=i+1;
+	  y=i;
+	}
   }
   
     // called when a message arrives
@@ -67,19 +76,9 @@ etiqueta.innerHTML = "LUCES";
   }
 
     // called when a message arrives
-y=0;
 	function led() {
-		if (y == 0){
-			sendMessage('led1')
-			document.getElementById("led_state").innerHTML ="ON";
-			y=1;}
-		else {
-			y=0;
-			sendMessage('led0')
-			document.getElementById("led_state").innerHTML ="OFF";
-			}  
-	
-	console.log("Te enviaron:"+message.payloadString);	
+	for(i=0; i<=y; i++)
+		document.getElementById('luz').innerHTML=dato[i];
   }
   
   function action(msg) {
