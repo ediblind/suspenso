@@ -46,9 +46,7 @@ etiqueta.innerHTML = "LUCES";
       console.log("onConnectionLost:"+responseObject.errorMessage);
     }
   }
-i=0;
-y=0;
-String dato[]:
+
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("Te enviaron:"+message.payloadString);
@@ -56,14 +54,9 @@ String dato[]:
 	msg=message.payloadString;
 	  if(msg=='encendido'){
 		document.getElementById('temp').innerHTML=msg;
-	        dato[i]=msg;
-	  i=i+1;
-	  y=i;}
+	 }
 	else if(msg=='apagado'){
 		document.getElementById('temp').innerHTML=msg;
-		dato[i]=msg;
-	  i=i+1;
-	  y=i;
 	}
   }
   
@@ -77,8 +70,7 @@ String dato[]:
 
     // called when a message arrives
 	function led() {
-	for(i=0; i<=y; i++){
-		document.getElementById('luz').innerHTML=dato[i];}
+
   }
   
   function action(msg) {
